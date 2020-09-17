@@ -10,8 +10,18 @@ public class Espresso extends Caffee {
 
     @Override
     public Map<String, Integer> makeDrink() {
-        this.ingredients.put("Water", 50);
-        this.ingredients.put("Arabica", 20);
+        addComponent("Water", 50);
+        addComponent("Arabica", 20);
         return this.ingredients;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

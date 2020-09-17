@@ -1,6 +1,8 @@
 package com.softserve.academy.sprint02.task03;
 
-public class Worker extends Person {
+import java.util.Objects;
+
+public class Worker extends Person implements Comparable{
     private String workPosition;
     private int experienceYears;
 
@@ -8,21 +10,34 @@ public class Worker extends Person {
         return workPosition;
     }
 
-    public void setWorkPosition(String workPosition) {
-        this.workPosition = workPosition;
-    }
-
     public int getExperienceYears() {
         return experienceYears;
     }
 
-    public void setExperienceYears(int experienceYears) {
-        this.experienceYears = experienceYears;
-    }
 
-    public Worker(String name, String workPosition,int experienceYears) {
+    public Worker(String name, String workPosition, int experienceYears) {
         super(name);
         this.workPosition = workPosition;
         this.experienceYears = experienceYears;
+    }
+
+    @Override
+    public int getComparator() {
+        return experienceYears;
+    }
+
+    @Override
+    public String toString() {
+        return super.getName() + " " + experienceYears;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

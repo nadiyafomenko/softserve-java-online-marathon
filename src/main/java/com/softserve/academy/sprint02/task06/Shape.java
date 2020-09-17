@@ -1,34 +1,30 @@
-package com.softserve.academy.sprint02.task03;
+package com.softserve.academy.sprint02.task06;
 
 import java.util.Objects;
 
-public class Person implements Comparable{
+public abstract class Shape {
     private String name;
-
-    public Person(String name) {
-        this.name = name;
-    }
 
     public String getName() {
         return name;
     }
 
-    @Override
-    public String toString() {
-        return name + " ";
+    public Shape(String name) {
+        this.name = name;
     }
+
+    public abstract double getArea();
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(name, person.name);
+        Shape shape = (Shape) o;
+        return Objects.equals(name, shape.name);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name);
     }
-
 }
