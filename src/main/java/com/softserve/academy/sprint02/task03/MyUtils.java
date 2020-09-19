@@ -2,10 +2,8 @@ package com.softserve.academy.sprint02.task03;
 
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
@@ -25,7 +23,7 @@ public class MyUtils {
         return list;
     }
 
-    public static void main(String ... args){
+    public static void main(String... args) {
         List<Person> originList = new ArrayList<>();
         originList.add(new Person("Ivan"));
         originList.add(new Student("Petro", "University", 3));
