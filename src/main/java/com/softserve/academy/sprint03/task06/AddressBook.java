@@ -1,11 +1,15 @@
 package com.softserve.academy.sprint03.task06;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.Stack;
 import java.util.stream.Collectors;
 
 enum SortOrder {
@@ -177,25 +181,5 @@ public class AddressBook implements Iterable {
                 return "First name: " + firstName + ", Last name: " + lastName;
             }
         }
-    }
-
-    public static void main(String... args) {
-         String[] expected = { "First name: Susan, Last name: Brown, Address: Address # 4",
-                 "First name: Karen, Last name: Davis, Address: Address #2",
-                 "First name: John, Last name: Taylor, Address: Address #1",
-                 "First name: John, Last name: Brown, Address: Address #1" };
-         String[] actual = new String[4];
-         AddressBook addressBook = new AddressBook(4);
-         addressBook.create("John", "Brown", "Address #1");
-         addressBook.create("Susan", "Brown", "Address # 4");
-         addressBook.create("Karen", "Davis", "Address #2");
-         addressBook.create("John", "Taylor", "Address #1");
-         addressBook.sortedBy(SortOrder.DESC);
-        int counter = 0;
-        for (Object record : addressBook)
-            actual[counter++] = record.toString();
-        System.out.println(Arrays.stream(expected).collect(Collectors.toList()));
-        System.out.println(Arrays.stream(actual).collect(Collectors.toList()));
-        System.out.println(Arrays.equals(expected, actual));
     }
 }
